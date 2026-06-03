@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priya Kachhadiya | Full Stack Developer</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Devicons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="animated-bg">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="gradient-sphere sphere-3"></div>
+</div>
+
+<!-- Particles -->
+<div class="particles" id="particles"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="container nav-container">
+        <div class="logo">
+            <i class="devicon-devicon-plain logo-icon"></i>
+            PK
+        </div>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="#home" onclick="closeMenu()">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#about" onclick="closeMenu()">
+                <i class="fas fa-user-astronaut"></i> About
+            </a>
+            <a href="#skills" onclick="closeMenu()">
+                <i class="fas fa-code"></i> Skills
+            </a>
+            <a href="#projects" onclick="closeMenu()">
+                <i class="fas fa-rocket"></i> Projects
+            </a>
+            <a href="#contact" onclick="closeMenu()">
+                <i class="fas fa-paper-plane"></i> Contact
+            </a>
+        </div>
+        
+        <div class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h3>
+                <span class="wave-icon">👋</span> Hello, I'm
+            </h3>
+            <h1>Priya Kachhadiya</h1>
+            <h2>
+                <span class="typing-text" id="typing"></span>
+            </h2>
+            
+            <div class="tech-stack-mini">
+                <div class="tech-icon-mini" title="HTML5">
+                    <i class="devicon-html5-plain colored"></i>
+                </div>
+                <div class="tech-icon-mini" title="CSS3">
+                    <i class="devicon-css3-plain colored"></i>
+                </div>
+                <div class="tech-icon-mini" title="JavaScript">
+                    <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="tech-icon-mini" title="Node.js">
+                    <i class="devicon-nodejs-plain colored"></i>
+                </div>
+                <div class="tech-icon-mini" title="Express.js">
+                    <i class="devicon-express-original colored"></i>
+                </div>
+                <div class="tech-icon-mini" title="MongoDB">
+                    <i class="devicon-mongodb-plain colored"></i>
+                </div>
+                <div class="tech-icon-mini" title="MySQL">
+                    <i class="devicon-mysql-plain colored"></i>
+                </div>
+                <div class="tech-icon-mini" title="Laravel">
+                    <i class="devicon-laravel-plain colored"></i>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a href="#projects" class="btn primary">
+                    <i class="fas fa-code"></i> Explore My Work
+                </a>
+                <a href="#contact" class="btn secondary">
+                    <i class="fas fa-terminal"></i> Let's Collaborate
+                </a>
+            </div>
+        </div>
+        
+        <!-- Creative Code Avatar Instead of Image -->
+        <div class="hero-visual">
+            <div class="code-avatar">
+                <div class="avatar-frame">
+                    <div class="code-brackets">
+                        <span class="bracket">&lt;</span>
+                        <div class="code-content">
+                            <div class="code-line line-1"></div>
+                            <div class="code-line line-2"></div>
+                            <div class="code-line line-3"></div>
+                            <div class="code-line line-4"></div>
+                            <div class="code-cursor"></div>
+                        </div>
+                        <span class="bracket">/&gt;</span>
+                    </div>
+                    <div class="floating-icons">
+                        <i class="devicon-html5-plain floating-icon icon-1"></i>
+                        <i class="devicon-css3-plain floating-icon icon-2"></i>
+                        <i class="devicon-javascript-plain floating-icon icon-3"></i>
+                        <i class="devicon-nodejs-plain floating-icon icon-4"></i>
+                        <i class="devicon-express-original floating-icon icon-5"></i>
+                        <i class="devicon-mongodb-plain floating-icon icon-6"></i>
+                        <i class="devicon-mysql-plain floating-icon icon-7"></i>
+                        <i class="devicon-laravel-plain floating-icon icon-8"></i>
+                    </div>
+                </div>
+                <div class="glow-ring"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="fade">
+    <div class="container about">
+        <h2 class="section-title">
+            <i class="fas fa-user-astronaut"></i> About Me
+        </h2>
+        
+        <div class="about-highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Computer Engineering</h3>
+                <p>Graduate with strong foundation in software development</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Full Stack Developer</h3>
+                <p>Building complete web solutions from frontend to backend</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Problem Solver</h3>
+                <p>Passionate about solving real-world problems with code</p>
+            </div>
+        </div>
+        
+        <p style="margin-top:40px;">
+            I help businesses and startups build modern, responsive, and scalable 
+            websites and web applications. From business websites and admin dashboards 
+            to custom web solutions, I focus on creating reliable products that improve 
+            user experience and support business growth.
+        </p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="10">0+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="8">0+</div>
+                <div class="stat-label">Technologies Mastered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="1">0+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="fade">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-code"></i> Skills & Expertise
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="devicon-html5-plain-wordmark"></i>
+                </div>
+                <h3>Frontend Development</h3>
+                <p>Creating responsive and interactive user interfaces</p>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="devicon-html5-plain"></i> HTML5</span>
+                    <span class="skill-tag"><i class="devicon-css3-plain"></i> CSS3</span>
+                    <span class="skill-tag"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
+                    <span class="skill-tag"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="devicon-nodejs-plain-wordmark"></i>
+                </div>
+                <h3>Backend Development</h3>
+                <p>Building robust server-side applications & RESTful APIs</p>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                    <span class="skill-tag"><i class="devicon-express-original"></i> Express.js</span>
+                    <span class="skill-tag"><i class="devicon-php-plain"></i> PHP</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="devicon-mongodb-plain-wordmark"></i>
+                </div>
+                <h3>Database Management</h3>
+                <p>Designing and optimizing database systems</p>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="devicon-mongodb-plain"></i> MongoDB</span>
+                    <span class="skill-tag"><i class="devicon-mysql-plain"></i> MySQL</span>
+                </div>
+            </div>
+            <div class="skill-card">
+            <div class="skill-icon">
+                <i class="devicon-git-plain-wordmark"></i>
+            </div>
+            <h3>Development Tools</h3>
+            <p>Using modern tools for efficient development & deployment</p>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="devicon-git-plain"></i> Git</span>
+                    <span class="skill-tag"><i class="devicon-github-original"></i> GitHub</span>
+                    <span class="skill-tag"><i class="fas fa-paper-plane"></i> Postman</span>
+                    <span class="skill-tag"><i class="fas fa-terminal"></i> XAMPP</span>
+                    <span class="skill-tag"><i class="fas fa-cloud-upload-alt"></i> Vercel</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="fade">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-rocket"></i> Featured Projects
+        </h2>
+        <div class="projects-grid">
+            <!-- <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="project-content">
+                    <h3>PDFTools</h3>
+                    <p>Merge, split, compress, watermark and manage PDF files with an intuitive interface.</p>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                        <span class="tag"><i class="devicon-express-original"></i> Express.js</span>
+                        <span class="tag"><i class="fas fa-file-alt"></i> PDF-lib</span>
+                    </div>
+                </div>
+            </div> -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Temp Number</h3>
+                    <p>Temporary phone activation platform with integrated wallet system.</p>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                        <span class="tag"><i class="devicon-express-original"></i> Express.js</span>
+                        <span class="tag"><i class="devicon-mysql-plain"></i> MySQL</span>
+                        <span class="tag"><i class="fas fa-plug"></i> REST API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="project-content">
+                    <h3>NGO E-Commerce</h3>
+                    <p>Donation and management platform developed using Laravel framework.</p>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                        <span class="tag"><i class="devicon-express-original"></i> Express.js</span>
+                        <span class="tag"><i class="devicon-mongodb-plain"></i> Mongo DB</span>
+                        <span class="tag"><i class="fas fa-plug"></i> REST API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="fade">
+    <div class="container contact">
+        <h2 class="section-title">
+            <i class="fas fa-paper-plane"></i> Get In Touch
+        </h2>
+        <p>Interested in working together? Let's connect.</p>
+        <div class="contact-links">
+            <a href="mailto:kachhadiyapriya02@gmail.com?subject=Portfolio%20Contact%20-%20Priya%20Kachhadiya" class="contact-link" onclick="this.href='mailto:kachhadiyapriya02@gmail.com?subject=Portfolio%20Contact%20-%20Priya%20Kachhadiya'; return true;">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://github.com/priyakachhadiya" target="_blank" class="contact-link">
+                <i class="devicon-github-original"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/priyakachhadiya" target="_blank" class="contact-link">
+                <i class="devicon-linkedin-plain"></i> LinkedIn
+            </a>
+            <a href="https://wa.me/8128142331" target="_blank" class="contact-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Priya Kachhadiya. Built with <i class="fas fa-heart" style="color:#ec4899;"></i> and lots of <i class="fas fa-coffee" style="color:#38bdf8;"></i></p>
+</footer>
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
