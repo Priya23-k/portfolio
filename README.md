@@ -11,7 +11,7 @@
 
 | Platform | URL | Status |
 |----------|-----|--------|
-| **Vercel** | [portfolio-priya.vercel.app](https://portfolio-priya.vercel.app) | 🟢 Live |
+| **Vercel** | (https://priya-kachhadiya-portfolio.vercel.app) | 🟢 Live |
 
 ---
 
