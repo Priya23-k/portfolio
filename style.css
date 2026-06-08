@@ -1580,3 +1580,336 @@ footer{
 }
 
 }
+/* Featured Project Single Card */
+.featured-project-single {
+    margin: 60px 0;
+}
+
+.project-showcase-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 45px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.4s ease;
+}
+
+.project-showcase-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+.project-glow-effect {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102,126,234,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.project-showcase-card:hover .project-glow-effect {
+    opacity: 1;
+}
+
+.project-showcase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.project-showcase-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.project-category-badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.category-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.category-badge.crypto {
+    background: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+}
+
+.category-badge.ai {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.category-badge.featured {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.project-showcase-info h3 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.project-showcase-info p {
+    color: #a8b2d1;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.project-tech-stack-modern {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.05);
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #ccd6f6;
+    transition: all 0.3s;
+}
+
+.tech-item:hover {
+    background: rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.tech-item i {
+    font-size: 1.2rem;
+}
+
+.project-stats-mini {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 35px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.stat-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-mini .stat-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.stat-mini .stat-label {
+    font-size: 0.7rem;
+    color: #8892b0;
+}
+
+.project-action-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-live-demo, .btn-all-projects {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-live-demo {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-live-demo:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-all-projects {
+    background: rgba(255,255,255,0.05);
+    color: #ccd6f6;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-all-projects:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(5px);
+}
+
+/* Crypto Preview Widget */
+.crypto-preview-widget {
+    background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.widget-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-weight: 600;
+    color: #667eea;
+}
+
+.widget-prices {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.coin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coin-icon {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.price {
+    font-weight: 600;
+    color: #ccd6f6;
+}
+
+.change {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.change.positive {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.change.negative {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.widget-footer {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 0.7rem;
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.fa-spin {
+    animation: spin 2s linear infinite;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .project-showcase-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .project-showcase-card {
+        padding: 30px;
+    }
+    
+    .project-showcase-info h3 {
+        font-size: 2rem;
+    }
+    
+    .project-stats-mini {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .project-action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-live-demo, .btn-all-projects {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-showcase-card {
+        padding: 20px;
+    }
+    
+    .project-tech-stack-modern {
+        gap: 8px;
+    }
+    
+    .tech-item {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}

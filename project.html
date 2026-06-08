@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Gallery | Priya Kachhadiya</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Devicons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    background: #667eea;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s;
+    mix-blend-mode: difference;
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.3s;
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.gradient-sphere {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+}
+
+.sphere-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #667eea, #764ba2);
+    top: -200px;
+    left: -200px;
+}
+
+.sphere-2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #f093fb, #f5576c);
+    bottom: -300px;
+    right: -200px;
+    animation-delay: -5s;
+}
+
+.sphere-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #4facfe, #00f2fe);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #a8b2d1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a:hover {
+    color: #667eea;
+}
+
+.back-home {
+    background: rgba(102,126,234,0.2);
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(102,126,234,0.3);
+}
+
+.back-home:hover {
+    background: rgba(102,126,234,0.3);
+    color: white;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 150px 0 80px;
+    text-align: center;
+}
+
+.hero-section .badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(102,126,234,0.1);
+    border: 1px solid rgba(102,126,234,0.3);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    background: linear-gradient(135deg, #fff, #667eea, #764ba2, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    color: #a8b2d1;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Search Bar */
+.search-container {
+    max-width: 500px;
+    margin: 40px auto;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255,255,255,0.1);
+}
+
+.search-container i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #667eea;
+}
+
+/* Category Pills */
+.category-pills {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.pill {
+    padding: 10px 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    color: #a8b2d1;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.pill:hover, .pill.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+/* Projects Grid */
+.projects-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+/* Project Card */
+.project-card-new {
+    position: relative;
+    background: rgba(255,255,255,0.03);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.project-card-new:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(102,126,234,0.3);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.5);
+}
+
+.card-header {
+    height: 200px;
+    background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header i {
+    font-size: 5rem;
+    color: #667eea;
+    transition: all 0.3s;
+}
+
+.project-card-new:hover .card-header i {
+    transform: scale(1.1);
+    color: #764ba2;
+}
+
+.card-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 12px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.card-status.live {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.card-status.dev {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.card-status.ai {
+    background: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-body h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.card-body p {
+    color: #a8b2d1;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.tech-stack-new {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.tech-stack-new span {
+    padding: 4px 12px;
+    background: rgba(102,126,234,0.1);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: #64ffda;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.btn-project {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-project:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+}
+
+.btn-coming {
+    background: rgba(255,255,255,0.05);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-coming:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.project-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 0.75rem;
+    color: #8892b0;
+}
+
+.project-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Featured Banner */
+.featured-banner {
+    background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
+    border-radius: 30px;
+    padding: 50px;
+    margin: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102,126,234,0.1), transparent);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.featured-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.featured-banner p {
+    color: #a8b2d1;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-featured {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.btn-featured:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: linear-gradient(135deg, rgba(102,126,234,0.05), rgba(118,75,162,0.05));
+    border-radius: 30px;
+    padding: 60px;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.newsletter-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.newsletter-section p {
+    color: #a8b2d1;
+    margin-bottom: 25px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: white;
+}
+
+.newsletter-form button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: #8892b0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .projects-grid-modern {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .featured-banner {
+        padding: 30px;
+    }
+    
+    .featured-banner h2 {
+        font-size: 1.5rem;
+    }
+    
+    .newsletter-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-pills {
+        gap: 10px;
+    }
+    
+    .pill {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .card-body h3 {
+        font-size: 1.2rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<div class="animated-bg">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="gradient-sphere sphere-3"></div>
+</div>
+
+<nav>
+    <div class="container nav-container">
+        <div class="logo">
+            <i class="devicon-devicon-plain"></i>
+            PK
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="index.html#about"><i class="fas fa-user"></i> About</a>
+            <a href="index.html#skills"><i class="fas fa-code"></i> Skills</a>
+            <a href="projects.html" style="color:#667eea;"><i class="fas fa-rocket"></i> Projects</a>
+            <a href="index.html#contact"><i class="fas fa-paper-plane"></i> Contact</a>
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="badge">
+                <i class="fas fa-code"></i> 2026 Portfolio
+            </div>
+            <h1>Project <span style="color:#667eea;">Showcase</span></h1>
+            <p>Explore my creative journey through innovative web solutions</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search projects by name or technology...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills">
+            <div class="pill active" data-filter="all">✨ All Projects</div>
+            <div class="pill" data-filter="ai">🤖 AI/ML</div>
+            <div class="pill" data-filter="fullstack">⚡ Full Stack</div>
+            <div class="pill" data-filter="frontend">🎨 Frontend</div>
+            <div class="pill" data-filter="realtime">💬 Real-time</div>
+            <div class="pill" data-filter="featured">⭐ Featured</div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid-modern" id="projectsGrid">
+            <!-- Crypto Pulse -->
+            <div class="project-card-new" data-category="featured fullstack ai" data-name="crypto pulse cryptocurrency" data-tech="react nextjs chartjs">
+                <div class="card-header">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="card-status live">🚀 LIVE</div>
+                </div>
+                <div class="card-body">
+                    <h3>Crypto Pulse</h3>
+                    <p>Real-time cryptocurrency tracker with live prices, market trends, and portfolio management. Track your favorite coins with interactive charts and instant price alerts.</p>
+                    <div class="tech-stack-new">
+                        <span>React.js</span>
+                        <span>Next.js</span>
+                        <span>Chart.js</span>
+                        <span>CoinGecko API</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://crypto-pulse.vercel.app" target="_blank" class="btn-project">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-chart-simple"></i> 15+ Coins</span>
+                            <span><i class="fas fa-clock"></i> Real-time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Store -->
+            <div class="project-card-new" data-category="fullstack featured" data-name="ecommerce store shop" data-tech="react node mongodb stripe">
+                <div class="card-header">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="card-status live">🛒 PRODUCTION</div>
+                </div>
+                <div class="card-body">
+                    <h3>E-Commerce Store</h3>
+                    <p>Full-featured online store with product management, cart system, and secure Stripe payment integration. Complete admin dashboard for inventory management.</p>
+                    <div class="tech-stack-new">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>Stripe</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://ecommerce-demo.vercel.app" target="_blank" class="btn-project">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-users"></i> 2.5k+ Users</span>
+                            <span><i class="fas fa-shopping-bag"></i> 500+ Orders</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-Time Chat -->
+            <div class="project-card-new" data-category="realtime featured" data-name="chat messaging realtime" data-tech="socketio node react redis">
+                <div class="card-header">
+                    <i class="fas fa-comments"></i>
+                    <div class="card-status live">💬 LIVE</div>
+                </div>
+                <div class="card-body">
+                    <h3>Real-Time Chat</h3>
+                    <p>Instant messaging platform with private rooms, file sharing, and real-time notifications. Built with Socket.io for seamless communication.</p>
+                    <div class="tech-stack-new">
+                        <span>Socket.io</span>
+                        <span>Node.js</span>
+                        <span>React</span>
+                        <span>Redis</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://realtime-chat.vercel.app" target="_blank" class="btn-project">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-comment-dots"></i> 1k+ Msgs/day</span>
+                            <span><i class="fas fa-users"></i> 50+ Rooms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Website Creator -->
+            <div class="project-card-new" data-category="ai featured" data-name="ai website builder artificial intelligence" data-tech="nextjs openai tailwind typescript">
+                <div class="card-header">
+                    <i class="fas fa-robot"></i>
+                    <div class="card-status ai">✨ AI POWERED</div>
+                </div>
+                <div class="card-body">
+                    <h3>AI Website Creator</h3>
+                    <p>Generate complete business websites using natural language prompts with OpenAI integration. Revolutionary AI-powered website generation platform.</p>
+                    <div class="tech-stack-new">
+                        <span>Next.js</span>
+                        <span>OpenAI API</span>
+                        <span>Tailwind</span>
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://ai-website-builder.vercel.app" target="_blank" class="btn-project">
+                            Try AI Demo <i class="fas fa-sparkles"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-bolt"></i> 3s Generation</span>
+                            <span><i class="fas fa-magic"></i> 50+ Templates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Small Business Website -->
+            <div class="project-card-new" data-category="frontend" data-name="small business website company" data-tech="html css javascript bootstrap">
+                <div class="card-header">
+                    <i class="fas fa-store"></i>
+                    <div class="card-status live">🏢 ACTIVE</div>
+                </div>
+                <div class="card-body">
+                    <h3>Small Business Website</h3>
+                    <p>Professional business website with service showcase, contact forms, and SEO optimization. Fully responsive and optimized for all devices.</p>
+                    <div class="tech-stack-new">
+                        <span>HTML5/CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Bootstrap</span>
+                        <span>EmailJS</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://business-website.vercel.app" target="_blank" class="btn-project">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-chart-line"></i> 98% Speed</span>
+                            <span><i class="fas fa-mobile-alt"></i> Responsive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Temp Number -->
+            <div class="project-card-new" data-category="fullstack" data-name="temp number temporary phone" data-tech="nodejs express mongodb api">
+                <div class="card-header">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="card-status dev">🔧 DEVELOPMENT</div>
+                </div>
+                <div class="card-body">
+                    <h3>Temp Number</h3>
+                    <p>Temporary phone activation platform with integrated wallet system and REST API. Secure and scalable solution for temporary phone numbers.</p>
+                    <div class="tech-stack-new">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                        <span>REST API</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-project btn-coming">
+                            Coming Soon <i class="fas fa-clock"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-phone"></i> 10k+ Numbers</span>
+                            <span><i class="fas fa-wallet"></i> Wallet System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NGO E-Commerce -->
+            <div class="project-card-new" data-category="fullstack" data-name="ngo donation charity" data-tech="laravel php mysql razorpay">
+                <div class="card-header">
+                    <i class="fas fa-heart"></i>
+                    <div class="card-status live">❤️ LIVE</div>
+                </div>
+                <div class="card-body">
+                    <h3>NGO E-Commerce</h3>
+                    <p>Donation and management platform for NGOs built with Laravel framework. Secure payment processing with Razorpay integration.</p>
+                    <div class="tech-stack-new">
+                        <span>Laravel</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>Razorpay</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-project">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-donate"></i> 500+ Donations</span>
+                            <span><i class="fas fa-hand-holding-heart"></i> 10+ NGOs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Banner -->
+        <div class="featured-banner">
+            <h2>🚀 Want to see more?</h2>
+            <p>Every project is built with passion and attention to detail</p>
+            <a href="index.html#contact" class="btn-featured">
+                Let's Work Together <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="newsletter-section">
+            <h3>📬 Get Project Updates</h3>
+            <p>Be the first to know when new projects are launched</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe <i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Priya Kachhadiya | Building innovative solutions with <i class="fas fa-heart" style="color:#ec4899;"></i></p>
+</footer>
+
+<div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+    });
+    
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+        cursorFollower.style.opacity = '1';
+    });
+
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.pill');
+    const projects = document.querySelectorAll('.project-card-new');
+    const searchInput = document.getElementById('searchInput');
+
+    function filterProjects() {
+        const activeFilter = document.querySelector('.pill.active').dataset.filter;
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        projects.forEach(project => {
+            const category = project.dataset.category;
+            const name = project.dataset.name;
+            const tech = project.dataset.tech;
+            
+            const matchesFilter = activeFilter === 'all' || category.includes(activeFilter);
+            const matchesSearch = searchTerm === '' || name.includes(searchTerm) || tech.includes(searchTerm);
+            
+            if (matchesFilter && matchesSearch) {
+                project.style.display = 'block';
+                setTimeout(() => {
+                    project.style.opacity = '1';
+                    project.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                project.style.opacity = '0';
+                project.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    project.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterProjects();
+        });
+    });
+
+    searchInput.addEventListener('input', filterProjects);
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Newsletter subscription
+    const subscribeBtn = document.querySelector('.newsletter-form button');
+    const emailInput = document.querySelector('.newsletter-form input');
+    
+    subscribeBtn.addEventListener('click', () => {
+        const email = emailInput.value;
+        if (email && email.includes('@')) {
+            alert('Thank you for subscribing! 🎉');
+            emailInput.value = '';
+        } else {
+            alert('Please enter a valid email address');
+        }
+    });
+
+    // Animate on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    projects.forEach(project => {
+        project.style.opacity = '0';
+        project.style.transform = 'translateY(30px)';
+        project.style.transition = 'all 0.6s ease';
+        observer.observe(project);
+    });
+</script>
+</body>
+</html>
