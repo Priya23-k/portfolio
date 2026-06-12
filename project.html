@@ -28,30 +28,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Cursor */
-.cursor {
-    width: 20px;
-    height: 20px;
-    background: #667eea;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s;
-    mix-blend-mode: difference;
-}
-
-.cursor-follower {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #667eea;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transition: transform 0.3s;
-}
-
 /* Animated Background */
 .animated-bg {
     position: fixed;
@@ -117,7 +93,7 @@ nav {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -172,7 +148,7 @@ nav {
 
 /* Hero Section */
 .hero-section {
-    padding: 150px 0 80px;
+    padding: 150px 0 60px;
     text-align: center;
 }
 
@@ -205,7 +181,7 @@ nav {
 /* Search Bar */
 .search-container {
     max-width: 500px;
-    margin: 40px auto;
+    margin: 40px auto 60px;
     position: relative;
 }
 
@@ -234,59 +210,37 @@ nav {
     color: #667eea;
 }
 
-/* Category Pills */
-.category-pills {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin: 40px 0;
-}
-
-.pill {
-    padding: 10px 24px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 50px;
-    color: #a8b2d1;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-weight: 500;
-}
-
-.pill:hover, .pill.active {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border-color: transparent;
-    transform: translateY(-2px);
-}
-
-/* Projects Grid */
+/* Projects Grid - FIXED SIZE */
 .projects-grid-modern {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    padding: 40px 0;
+    padding: 20px 0 60px;
 }
 
-/* Project Card */
+/* Project Card - FIXED HEIGHT */
 .project-card-new {
     position: relative;
     background: rgba(255,255,255,0.03);
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 500px;
 }
 
 .project-card-new:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-8px);
     border-color: rgba(102,126,234,0.3);
     box-shadow: 0 30px 50px rgba(0,0,0,0.5);
 }
 
 .card-header {
-    height: 200px;
+    height: 160px;
+    min-height: 160px;
     background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2));
     display: flex;
     align-items: center;
@@ -296,7 +250,7 @@ nav {
 }
 
 .card-header i {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #667eea;
     transition: all 0.3s;
 }
@@ -308,14 +262,15 @@ nav {
 
 .card-status {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 5px 12px;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     font-size: 0.7rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .card-status.live {
@@ -336,50 +291,63 @@ nav {
     border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
+.card-status.featured {
+    background: rgba(236, 72, 153, 0.2);
+    color: #ec4899;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
 .card-body {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .card-body h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
     color: #ffffff;
+    line-height: 1.3;
 }
 
 .card-body p {
     color: #a8b2d1;
     line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    flex: 1;
 }
 
 .tech-stack-new {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
+    gap: 6px;
+    margin-bottom: 20px;
 }
 
 .tech-stack-new span {
-    padding: 4px 12px;
+    padding: 5px 12px;
     background: rgba(102,126,234,0.1);
     border-radius: 20px;
     font-size: 0.7rem;
     color: #64ffda;
+    font-weight: 500;
 }
 
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: auto;
 }
 
 .btn-project {
-    padding: 8px 20px;
+    padding: 10px 24px;
     background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 8px;
+    border-radius: 10px;
     color: white;
     text-decoration: none;
     font-size: 0.85rem;
@@ -388,6 +356,7 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 .btn-project:hover {
@@ -396,9 +365,8 @@ nav {
 }
 
 .btn-coming {
-    background: rgba(255,255,255,0.05);
-    cursor: not-allowed;
-    opacity: 0.6;
+    background: rgba(255,255,255,0.08);
+    cursor: default;
 }
 
 .btn-coming:hover {
@@ -409,7 +377,7 @@ nav {
 .project-stats {
     display: flex;
     gap: 15px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #8892b0;
 }
 
@@ -417,6 +385,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 5px;
+    white-space: nowrap;
 }
 
 /* Featured Banner */
@@ -424,7 +393,7 @@ nav {
     background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
     border-radius: 30px;
     padding: 50px;
-    margin: 60px 0;
+    margin: 0 0 60px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -464,7 +433,7 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 32px;
+    padding: 14px 36px;
     background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 50px;
     color: white;
@@ -485,7 +454,7 @@ nav {
     background: linear-gradient(135deg, rgba(102,126,234,0.05), rgba(118,75,162,0.05));
     border-radius: 30px;
     padding: 60px;
-    margin: 60px 0;
+    margin: 0 0 60px;
     text-align: center;
 }
 
@@ -504,28 +473,28 @@ nav {
     gap: 15px;
     max-width: 500px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .newsletter-form input {
     flex: 1;
-    padding: 12px 20px;
+    padding: 14px 20px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
+    border-radius: 10px;
     color: white;
+    font-size: 0.9rem;
 }
 
 .newsletter-form button {
-    padding: 12px 30px;
+    padding: 14px 28px;
     background: linear-gradient(135deg, #667eea, #764ba2);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     color: white;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s;
+    white-space: nowrap;
 }
 
 .newsletter-form button:hover {
@@ -596,29 +565,34 @@ footer {
     .newsletter-section {
         padding: 30px;
     }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .project-card-new {
+        min-height: auto;
+    }
 }
 
-@media (max-width: 768px) {
-    .category-pills {
-        gap: 10px;
-    }
-    
-    .pill {
-        padding: 6px 16px;
-        font-size: 0.8rem;
-    }
-    
+@media (max-width: 480px) {
     .card-body h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .card-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .project-stats {
+        gap: 12px;
     }
 }
 </style>
 </head>
 <body>
-
-<!-- Custom Cursor -->
-<div class="cursor"></div>
-<div class="cursor-follower"></div>
 
 <div class="animated-bg">
     <div class="gradient-sphere sphere-1"></div>
@@ -660,26 +634,48 @@ footer {
             <i class="fas fa-search"></i>
         </div>
 
-        <!-- Category Pills -->
-        <div class="category-pills">
-            <div class="pill active" data-filter="all">✨ All Projects</div>
-            <div class="pill" data-filter="ai">🤖 AI/ML</div>
-            <div class="pill" data-filter="fullstack">⚡ Full Stack</div>
-            <div class="pill" data-filter="frontend">🎨 Frontend</div>
-            <div class="pill" data-filter="realtime">💬 Real-time</div>
-            <div class="pill" data-filter="featured">⭐ Featured</div>
-        </div>
-
         <!-- Projects Grid -->
         <div class="projects-grid-modern" id="projectsGrid">
+            
+            <!-- BizFlow -->
+            <div class="project-card-new" data-name="bizflow business management system crm invoice employee dashboard" data-tech="nodejs express mongodb ejs bootstrap chartjs socketio twilio">
+                <div class="card-header">
+                    <i class="fas fa-building"></i>
+                    <div class="card-status featured">⭐ FEATURED</div>
+                </div>
+                <div class="card-body">
+                    <h3>🚀 BizFlow - Business Management System</h3>
+                    <p>Complete business management solution with CRM, invoice generation, employee management, analytics dashboard, and WhatsApp notifications. Built for small businesses, clinics, gyms, and coaching institutes.</p>
+                    <div class="tech-stack-new">
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>MongoDB</span>
+                        <span>EJS</span>
+                        <span>Bootstrap 5</span>
+                        <span>Chart.js</span>
+                        <span>Socket.io</span>
+                        <span>Twilio API</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://bizflow-production-dce7.up.railway.app" target="_blank" class="btn-project">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> Full Stack</span>
+                            <span><i class="fas fa-database"></i> MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Crypto Pulse -->
-            <div class="project-card-new" data-category="featured fullstack ai" data-name="crypto pulse cryptocurrency" data-tech="react nextjs chartjs">
+            <div class="project-card-new" data-name="crypto pulse cryptocurrency tracker" data-tech="react nextjs chartjs coingecko api">
                 <div class="card-header">
                     <i class="fas fa-chart-line"></i>
                     <div class="card-status live">🚀 LIVE</div>
                 </div>
                 <div class="card-body">
-                    <h3>Crypto Pulse</h3>
+                    <h3>📈 Crypto Pulse</h3>
                     <p>Real-time cryptocurrency tracker with live prices, market trends, and portfolio management. Track your favorite coins with interactive charts and instant price alerts.</p>
                     <div class="tech-stack-new">
                         <span>React.js</span>
@@ -699,123 +695,15 @@ footer {
                 </div>
             </div>
 
-            <!-- E-Commerce Store -->
-            <div class="project-card-new" data-category="fullstack featured" data-name="ecommerce store shop" data-tech="react node mongodb stripe">
-                <div class="card-header">
-                    <i class="fas fa-shopping-cart"></i>
-                    <div class="card-status live">🛒 PRODUCTION</div>
-                </div>
-                <div class="card-body">
-                    <h3>E-Commerce Store</h3>
-                    <p>Full-featured online store with product management, cart system, and secure Stripe payment integration. Complete admin dashboard for inventory management.</p>
-                    <div class="tech-stack-new">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                        <span>Stripe</span>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://ecommerce-demo.vercel.app" target="_blank" class="btn-project">
-                            Live Demo <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <div class="project-stats">
-                            <span><i class="fas fa-users"></i> 2.5k+ Users</span>
-                            <span><i class="fas fa-shopping-bag"></i> 500+ Orders</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Real-Time Chat -->
-            <div class="project-card-new" data-category="realtime featured" data-name="chat messaging realtime" data-tech="socketio node react redis">
-                <div class="card-header">
-                    <i class="fas fa-comments"></i>
-                    <div class="card-status live">💬 LIVE</div>
-                </div>
-                <div class="card-body">
-                    <h3>Real-Time Chat</h3>
-                    <p>Instant messaging platform with private rooms, file sharing, and real-time notifications. Built with Socket.io for seamless communication.</p>
-                    <div class="tech-stack-new">
-                        <span>Socket.io</span>
-                        <span>Node.js</span>
-                        <span>React</span>
-                        <span>Redis</span>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://realtime-chat.vercel.app" target="_blank" class="btn-project">
-                            Live Demo <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <div class="project-stats">
-                            <span><i class="fas fa-comment-dots"></i> 1k+ Msgs/day</span>
-                            <span><i class="fas fa-users"></i> 50+ Rooms</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Website Creator -->
-            <div class="project-card-new" data-category="ai featured" data-name="ai website builder artificial intelligence" data-tech="nextjs openai tailwind typescript">
-                <div class="card-header">
-                    <i class="fas fa-robot"></i>
-                    <div class="card-status ai">✨ AI POWERED</div>
-                </div>
-                <div class="card-body">
-                    <h3>AI Website Creator</h3>
-                    <p>Generate complete business websites using natural language prompts with OpenAI integration. Revolutionary AI-powered website generation platform.</p>
-                    <div class="tech-stack-new">
-                        <span>Next.js</span>
-                        <span>OpenAI API</span>
-                        <span>Tailwind</span>
-                        <span>TypeScript</span>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://ai-website-builder.vercel.app" target="_blank" class="btn-project">
-                            Try AI Demo <i class="fas fa-sparkles"></i>
-                        </a>
-                        <div class="project-stats">
-                            <span><i class="fas fa-bolt"></i> 3s Generation</span>
-                            <span><i class="fas fa-magic"></i> 50+ Templates</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Small Business Website -->
-            <div class="project-card-new" data-category="frontend" data-name="small business website company" data-tech="html css javascript bootstrap">
-                <div class="card-header">
-                    <i class="fas fa-store"></i>
-                    <div class="card-status live">🏢 ACTIVE</div>
-                </div>
-                <div class="card-body">
-                    <h3>Small Business Website</h3>
-                    <p>Professional business website with service showcase, contact forms, and SEO optimization. Fully responsive and optimized for all devices.</p>
-                    <div class="tech-stack-new">
-                        <span>HTML5/CSS3</span>
-                        <span>JavaScript</span>
-                        <span>Bootstrap</span>
-                        <span>EmailJS</span>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://business-website.vercel.app" target="_blank" class="btn-project">
-                            Live Demo <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <div class="project-stats">
-                            <span><i class="fas fa-chart-line"></i> 98% Speed</span>
-                            <span><i class="fas fa-mobile-alt"></i> Responsive</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Temp Number -->
-            <div class="project-card-new" data-category="fullstack" data-name="temp number temporary phone" data-tech="nodejs express mongodb api">
-                <div class="card-header">
+            <div class="project-card-new" data-name="temp number temporary phone" data-tech="nodejs express mongodb api">
+                <div class="card-header" >
                     <i class="fas fa-mobile-alt"></i>
                     <div class="card-status dev">🔧 DEVELOPMENT</div>
                 </div>
                 <div class="card-body">
-                    <h3>Temp Number</h3>
-                    <p>Temporary phone activation platform with integrated wallet system and REST API. Secure and scalable solution for temporary phone numbers.</p>
+                    <h3>📱 Temp Number</h3>
+                    <p>Temporary phone activation platform with integrated wallet system and REST API. Secure and scalable solution for temporary phone numbers with OTP verification.</p>
                     <div class="tech-stack-new">
                         <span>Node.js</span>
                         <span>Express</span>
@@ -823,26 +711,26 @@ footer {
                         <span>REST API</span>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn-project btn-coming">
-                            Coming Soon <i class="fas fa-clock"></i>
+                        <a href="#" class="btn-project">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
                         </a>
                         <div class="project-stats">
                             <span><i class="fas fa-phone"></i> 10k+ Numbers</span>
-                            <span><i class="fas fa-wallet"></i> Wallet System</span>
+                            <span><i class="fas fa-wallet"></i> Wallet</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- NGO E-Commerce -->
-            <div class="project-card-new" data-category="fullstack" data-name="ngo donation charity" data-tech="laravel php mysql razorpay">
-                <div class="card-header">
-                    <i class="fas fa-heart"></i>
+            <div class="project-card-new" data-name="ngo donation charity" data-tech="laravel php mysql razorpay">
+                <div class="card-header" style="background: linear-gradient(135deg, rgba(236,72,153,0.2), rgba(239,68,68,0.2));">
+                    <i class="fas fa-heart" style="color: #ec4899;"></i>
                     <div class="card-status live">❤️ LIVE</div>
                 </div>
                 <div class="card-body">
-                    <h3>NGO E-Commerce</h3>
-                    <p>Donation and management platform for NGOs built with Laravel framework. Secure payment processing with Razorpay integration.</p>
+                    <h3>💝 NGO E-Commerce</h3>
+                    <p>Donation and management platform for NGOs built with Laravel framework. Secure payment processing with Razorpay integration for seamless charitable contributions.</p>
                     <div class="tech-stack-new">
                         <span>Laravel</span>
                         <span>PHP</span>
@@ -854,8 +742,8 @@ footer {
                             Live Demo <i class="fas fa-external-link-alt"></i>
                         </a>
                         <div class="project-stats">
-                            <span><i class="fas fa-donate"></i> 500+ Donations</span>
-                            <span><i class="fas fa-hand-holding-heart"></i> 10+ NGOs</span>
+                            <span><i class="fas fa-donate"></i> 500+ Donors</span>
+                            <span><i class="fas fa-building"></i> 10+ NGOs</span>
                         </div>
                     </div>
                 </div>
@@ -871,7 +759,7 @@ footer {
             </a>
         </div>
 
-        <!-- Newsletter Section -->
+        <!-- Newsletter -->
         <div class="newsletter-section">
             <h3>📬 Get Project Updates</h3>
             <p>Be the first to know when new projects are launched</p>
@@ -892,84 +780,38 @@ footer {
 </div>
 
 <script>
-    // Custom Cursor
-    const cursor = document.querySelector('.cursor');
-    const cursorFollower = document.querySelector('.cursor-follower');
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        setTimeout(() => {
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        }, 100);
-    });
-    
-    document.addEventListener('mouseenter', () => {
-        cursor.style.opacity = '1';
-        cursorFollower.style.opacity = '1';
-    });
-
-    // Filter functionality
-    const filterButtons = document.querySelectorAll('.pill');
-    const projects = document.querySelectorAll('.project-card-new');
     const searchInput = document.getElementById('searchInput');
+    const projects = document.querySelectorAll('.project-card-new');
 
-    function filterProjects() {
-        const activeFilter = document.querySelector('.pill.active').dataset.filter;
+    searchInput.addEventListener('input', () => {
         const searchTerm = searchInput.value.toLowerCase();
         
         projects.forEach(project => {
-            const category = project.dataset.category;
             const name = project.dataset.name;
             const tech = project.dataset.tech;
             
-            const matchesFilter = activeFilter === 'all' || category.includes(activeFilter);
-            const matchesSearch = searchTerm === '' || name.includes(searchTerm) || tech.includes(searchTerm);
-            
-            if (matchesFilter && matchesSearch) {
-                project.style.display = 'block';
-                setTimeout(() => {
-                    project.style.opacity = '1';
-                    project.style.transform = 'translateY(0)';
-                }, 10);
+            if (searchTerm === '' || name.includes(searchTerm) || tech.includes(searchTerm)) {
+                project.style.display = 'flex';
+                project.style.opacity = '1';
             } else {
                 project.style.opacity = '0';
-                project.style.transform = 'translateY(20px)';
                 setTimeout(() => {
                     project.style.display = 'none';
                 }, 300);
             }
         });
-    }
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            filterProjects();
-        });
     });
 
-    searchInput.addEventListener('input', filterProjects);
-
-    // Back to top
     const backToTop = document.getElementById('backToTop');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
+        backToTop.classList.toggle('show', window.scrollY > 300);
     });
     
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Newsletter subscription
     const subscribeBtn = document.querySelector('.newsletter-form button');
     const emailInput = document.querySelector('.newsletter-form input');
     
@@ -983,12 +825,7 @@ footer {
         }
     });
 
-    // Animate on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
+    // Scroll animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -996,7 +833,7 @@ footer {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
     
     projects.forEach(project => {
         project.style.opacity = '0';
